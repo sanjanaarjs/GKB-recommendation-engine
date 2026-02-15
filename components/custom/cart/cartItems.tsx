@@ -4,7 +4,7 @@ import CartMinus from "@/components/icons/CartMinus";
 import CartPlus from "@/components/icons/CartPlus";
 import CartWishlist from "@/components/icons/CartWishlist";
 import {
-    Accordion, abv
+    Accordion,
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
