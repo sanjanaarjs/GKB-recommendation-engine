@@ -1,0 +1,13 @@
+export const COLLECTION = "collection_page";
+export const PAGESIZE = 9;
+export const CURRENTPAGE = 1;
+export const CATEGORY = "CATEGORY";
+export const PRODUCT = "PRODUCT";
+export const ASC = "ASC";
+export const BESTSELLER = "is_besteller";
+export const NEWARRIVAL = "is_new_arrival";
+export const ITEM_BANNER = "Banner";
+export const BOTTOM = "Bottom";
+export const ATTR_BRAND = "brand";
+export const POPULAR = "popular";
+export const COL_SPAN = 2;

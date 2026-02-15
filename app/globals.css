@@ -1,0 +1,387 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+
+/* === Gilroy === */
+@font-face {
+    font-family: "Gilroy";
+    src: url("/fonts/gilroy/Gilroy-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url("/fonts/gilroy/Gilroy-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url("/fonts/gilroy/Gilroy-RegularItalic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url("/fonts/gilroy/Gilroy-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url("/fonts/gilroy/Gilroy-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url("/fonts/gilroy/Gilroy-Heavy.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* === Great Vibes === */
+@font-face {
+    font-family: "GreatVibes";
+    src: url("/fonts/greatVibes/GreatVibes-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* === Avenir === */
+@font-face {
+    font-family: "Avenir";
+    src: url("/fonts/Avenir/Avenir-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Avenir";
+    src: url("/fonts/Avenir/Avenir-Book.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Avenir";
+    src: url("/fonts/Avenir/Avenir-Regular.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* @font-face {
+    font-family: "Avenir";
+    src: url("/fonts/Avenir/Avenir-Medium.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+} */
+@font-face {
+    font-family: "Avenir";
+    src: url("/fonts/Avenir/Avenir-Heavy.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Avenir";
+    src: url("/fonts/Avenir/Avenir-Black.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* Book Oblique */
+@font-face {
+    font-family: "Avenir";
+    src: url("/fonts/avenir/Avenir-Italic.otf") format("opentype");
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Helvetica */
+@font-face {
+    font-family: "Helvetica";
+    src: url("/fonts/helvetica/Helvetica-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Helvetica";
+    src: url("/fonts/helvetica/Helvetica.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Helvetica";
+    src: url("/fonts/helvetica/Helvetica-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+    font-family: "Avenir", sans-serif;
+}
+
+/* Prevent iOS input focus zoom */
+input,
+textarea,
+select {
+    font-size: 16px;
+}
+
+/* Safari-only fix for input zoom */
+@supports (-webkit-touch-callout: none) {
+    @media screen and (max-device-width: 1024px) {
+        input,
+        textarea,
+        select {
+            font-size: 16px !important;
+        }
+    }
+}
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --color-foreground: var(--foreground);
+
+    --color-ring: var(--ring);
+    --color-border: var(--border);
+
+    /* Font */
+    --font-gilroy: var(--font-gilroy);
+    --font-avenir: var(--font-avenir);
+    --font-helvetica: var(--font-helvetica);
+    --font-greatvibes: var(--font-greatvibes);
+
+    /* Backgrounds & Base */
+    --color-background: var(--background);
+    --color-border: var(--border-color);
+    --color-border-color-black: var(--border-color-black);
+    --color-background-grey: var(--background-grey);
+    --color-background-color-orange: var(--background-color-orange);
+    --color-background-color-green: var(--background-color-green);
+
+    /* Primary */
+    --color-primary-100: var(--primary-100);
+    --color-primary-200: var(--primary-200);
+    --color-primary-300: var(--primary-300);
+    --color-primary-400: var(--primary-400);
+    --color-primary-500: var(--primary-500);
+
+    /* Secondary */
+    --color-secondary-100: var(--secondary-100);
+    --color-secondary-200: var(--secondary-200);
+
+    /* Tertiary */
+    --color-tertiary-100: var(--tertiary-100);
+    --color-tertiary-200: var(--tertiary-200);
+    --color-tertiary-300: var(--tertiary-300);
+    --color-tertiary-400: var(--tertiary-400);
+    --color-tertiary-500: var(--tertiary-500);
+    --color-tertiary-600: var(--tertiary-600);
+    --color-tertiary-700: var(--tertiary-700);
+    --color-tertiary-800: var(--tertiary-800);
+
+    /* Font Colors */
+    --color-font-main: var(--font-main);
+    --color-font-secondary: var(--font-secondary);
+    --color-font-inverse: var(--font-inverse);
+    --color-font-accent-1: var(--font-accent-1);
+    --color-font-accent-2: var(--font-accent-2);
+    --color-font-error: var(--font-error);
+    --color-font-price: var(--font-price);
+    --color-font-cart: var(--font-cart);
+    --color-black-neutral-nine: var(--black-neutral-nine);
+
+    /* border Colors */
+    --color-border-color-light: var(--border-color-light);
+    --color-border-color-white: var(--border-color-white);
+    --color-border-color-orange: var(--border-color-orange);
+    --color-border-color-green: var(--border-color-green);
+    --color-border-grey: var(--border-grey);
+    --color-cart-border: var(--cart-border);
+    --color-border-light-grey: var(--border-light-grey);
+    --color-store-border: var(--store-border);
+
+    /* bg Colors */
+    --color-background-grey-light: var(--background-grey-light);
+    --color-order-card-topBar: var(--order-card-topBar);
+    --color-order-card-cancel-topBar: var(--order-card-cancel-topBar);
+    --color-bg-gradient-about: var(--bg-gradient-about);
+    --color-bg-gradient-about2: var(--bg-gradient-about2);
+}
+
+:root {
+    --foreground: oklch(0.145 0 0);
+    /* Primary Colors */
+    --primary-100: #00a0dc;
+    --primary-200: #004160;
+    --primary-300: #016ca0;
+    --primary-400: #84d7ff;
+    --primary-500: #d9d9d9;
+
+    /* Secondary Colors */
+    --secondary-100: #f1db49;
+    --secondary-200: #fdf9df;
+
+    /* Tertiary Colors */
+    --tertiary-100: #51a64f;
+    --tertiary-200: #3d13b3;
+    /* fixed typo */
+    --tertiary-300: #ed6b2f;
+    --tertiary-400: rgba(11, 11, 11, 0.4);
+    /* 40% opacity */
+    --tertiary-500: #0093da;
+    --tertiary-600: #e9e9e9;
+    --tertiary-700: #072654;
+    --tertiary-800: #00000080;
+
+    /* Neutral Color */
+    --black-neutral-nine: #282828;
+
+    /* Fonts */
+    --font-gilroy: "Gilroy", sans-serif;
+    --font-avenir: "Avenir", sans-serif;
+    --font-helvetica: "Helvetica", sans-serif;
+    --font-greatvibes: "Great Vibes", cursive;
+
+    /* Font Colors */
+    --font-main: #0b0b0b;
+    --font-secondary: #7c7c7c;
+    --font-inverse: #ffffff;
+    --font-accent-1: #00a0dc;
+    --font-accent-2: #004160;
+    --font-error: #ff0000;
+
+    /* Background & Border */
+    --background: #ffffff;
+    --border-color: #e5e5e5;
+    --border-light-grey: #ebebeb;
+    --border-color-light: #b2b2b2;
+    --border-color-white: #ebebeb;
+    --border-color-orange: #ff9500;
+    --border-color-green: #34c759;
+    --border-color-black: #0b0b0b;
+    --background-grey: #f7f7f7;
+    --border-grey: #bdc6d0;
+    --background-grey-light: #f9fafb;
+    --background-color-orange: #ff95001a;
+    --background-color-green: #34c7591a;
+    --font-price: #888;
+    --cart-border: rgba(178, 178, 178, 0.5);
+    --font-cart: #0b0b0b;
+    --order-card-topBar: #34c7591a;
+    --order-card-cancel-topBar: #c734341a;
+    --store-border: #ebebeb;
+    --bg-gradient-about: linear-gradient(180deg, #0b0b0b 0%, #3b3a39 100%);
+    --bg-gradient-about2: linear-gradient(0deg, #0b0b0b 0%, #3a3938 100%);
+}
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+
+    .primary-button {
+        @apply flex items-center gap-2 py-2 px-4 border border-white text-white rounded-3xl cursor-pointer hover:bg-white hover:text-black transition-all duration-200;
+    }
+
+    .secondary-button {
+        @apply flex items-center gap-2 py-2 px-4 border bg-black text-white border-black rounded-3xl cursor-pointer hover:bg-white hover:text-black transition-all duration-200;
+    }
+
+    .primary-button-black {
+        @apply flex items-center gap-2 py-2 px-4 border border-black text-black rounded-3xl cursor-pointer hover:bg-black hover:text-white transition-all duration-200;
+    }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        #afadb11a 25%,
+        /* soft purple transparent */ #f2eaff 50%,
+        /* highlight */ #7a787c1a 75% /* soft purple transparent */
+    );
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* Horizontal shimmer animation */
+@keyframes skeleton-loading {
+    from {
+        background-position: 200% 0;
+    }
+
+    to {
+        background-position: -200% 0;
+    }
+}
+
+.cartwishlist:hover > svg path {
+    stroke: white;
+    transition: 0.5s ease;
+}
+
+.cartwishlist {
+    transition: 0.5s ease;
+}
+
+.cart-accordion button > svg {
+    display: none;
+}
+
+.cart-accordion button > svg.chevron-cart-arrow {
+    display: block;
+}
+
+.card-shadow {
+    box-shadow: 0 6px 24px 0 rgba(0, 0, 0, 0.1);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px var(--background) inset;
+    box-shadow: 0 0 0 1000px var(--background) inset;
+    -webkit-text-fill-color: var(--font-main);
+    caret-color: var(--font-main);
+}
+
+.background-about-gradient {
+    background: var(--bg-gradient-about);
+}
+.background-about-gradient-2 {
+    background: var(--bg-gradient-about2);
+}
